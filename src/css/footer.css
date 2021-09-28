@@ -1,0 +1,38 @@
+.footerarea {
+    background-color: #232f3e ;
+    width: 100%;
+    min-height: 200px;
+    color: whitesmoke;
+}
+
+.footerarea__top {
+    background-color: #37475a;
+    min-height: 60px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+.footerarea__links {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footerarea__links1 {
+    font-weight: 900;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer__linksWrapper {
+    margin-top: 2rem;
+}

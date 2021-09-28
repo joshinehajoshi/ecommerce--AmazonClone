@@ -1,0 +1,11 @@
+.navlinks {
+    background-color: #232f3e;
+    height: 39px;
+    color: white;
+}
+
+.navlinks__outer {
+    width: 70%;
+    margin: auto;
+    padding: 5px;
+}
