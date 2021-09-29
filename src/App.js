@@ -5,9 +5,37 @@ import Home from './components/Home';
 import Checkout from './components/Checkout';
 import Footer from './components/Footer';
 import NavLinks  from './components/NavLinks';
+import {auth} from './firebase-config';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useStateValue } from './StateProvider';
+import { useEffect } from 'react'
 
 function App() {
+
+  const [{loggedinuser}, dispatch] = useStateValue();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((userauth) => {
+      if(userauth) {
+        dispatch({
+          type: "SET_LOGIN",
+          user: userauth
+        })
+      }else {
+        dispatch({
+          type: "SET_LOGIN",
+          user: null
+        })
+      }
+    })
+    
+    return () => {
+      unsubscribe();
+    }
+  }, [])
+
+  console.log("user",loggedinuser)
+
   return (
     <Router>
     <div className="App">
